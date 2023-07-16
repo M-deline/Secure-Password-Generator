@@ -5,9 +5,19 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-//FIRST CHANGE
+//If the user presses cancel at the beginning, it will end function
 var userAnswer = prompt("How many characters would like in your password?")
-
+if (!userAnswer) {
+  return
+}
+else if (userAnswer < 8) {
+  console.log("Password length must be 8 or more characters!")
+  return
+}
+else if (userAnswer > 129) {
+  console.log("Password length must be less than 129 characters!")
+  return
+}
   passwordText.value = password;
 
 }
@@ -19,7 +29,8 @@ generateBtn.addEventListener("click", writePassword);
 
 // must make a variable to store the person using the website's answers
 // must make the questions that pop up 
-// 
+// MINI PROJECT EX var index = Math.floor(Math.random() * options.length);
+// var computerChoice = options[index];
 
 
 
