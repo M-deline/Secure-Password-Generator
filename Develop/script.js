@@ -5,6 +5,8 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+//FIRST CHANGE
+var userAnswer = prompt("How many characters would like in your password?")
 
   passwordText.value = password;
 
