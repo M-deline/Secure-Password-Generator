@@ -6,6 +6,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 //If the user presses cancel at the beginning, it will end function
+//If statement for password length
 var userAnswer = prompt("How many characters would like in your password?")
 if (!userAnswer) {
   return
@@ -18,6 +19,7 @@ else if (userAnswer > 129) {
   console.log("Password length must be less than 129 characters!")
   return
 }
+// next part needs arrays for each section and each section is a variable?
   passwordText.value = password;
 
 }
