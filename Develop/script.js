@@ -20,16 +20,19 @@ else if (userAnswer > 129) {
   return
 }
 // next part needs arrays for each section and each section is a variable?
-// each 
+// they are grey ish because they are DECLARED but not called in the function
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
 
+//OK button on pop-up
 var upperCase = confirm("Please click OK to include uppercase characters in your password.")
 var lowerCase = confirm("Please click OK to include lowercase characters in your password.")
 var numbers = confirm("Please click OK to include numbers in your password.")
 var specialCharacters = confirm("Please click OK to include Special Characters in your password.")
+
+
   passwordText.value = password;
 
  
