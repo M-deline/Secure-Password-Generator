@@ -11,6 +11,18 @@ specialCharacters: "!@#$%^&*()?",
 function writePassword() {
   var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
+  if (password.upperCase === true) {
+    password = password + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+  }
+  if (password.lowerCase === true) {
+    password = password + "abcdefghijklmnopqrstuvwxyz"; 
+  }
+  if (password.numbers === true) {
+    password = password + "0123456789"; 
+  }
+  if (password.specialCharacters === true) {
+    password = password + "!@#$%^&*()?"; 
+  }
 //If the user presses cancel at the beginning, it will end function
 //If statement for password length
 var userAnswer = prompt("How many characters would like in your password?")
@@ -25,16 +37,10 @@ else if (userAnswer > 129) {
   console.log("Password length must be less than 129 characters!")
   return
 }
-//now for the true if the user does want the things included 
+
+
 //OK button on pop-up
 var upperCase = confirm("Please click OK to include uppercase characters in your password.")
-//trying to make it where if the user does/doesn't hit ok or cancel it still continues
-function upperCase () {
-  if (upperCase === true) {
-    //so if it is true need to store answer and add to password eventually
-
-  }
-}
 
 
 
@@ -47,7 +53,7 @@ var specialCharacters = confirm("Please click OK to include Special Characters i
 
  
 }
-//for (var = i = 0; i <= character.length; i++) +{
+//for (var = i = 0; i <= characterLength; i++) +{
   //var rando
 //}
 // Add event listener to generate button
