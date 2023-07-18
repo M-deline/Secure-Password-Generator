@@ -51,23 +51,15 @@ function writePassword() {
   if (password.specialCharacters === true) {
     password = passwordText += specialCharacters; 
   }
-  
+}
   
   //this is what makes the password generate, some reason array is incorrect
 for (var i = 0; i < password.length; i++) {
   password += generatePassword.charAt(Math.floor(Math.random() * characters.length));
 };
 // so password is generated password
-password = generatePassword[index];
+// this is a local filllelellel password = generatePassword[index];
 
-
-
-// so right now the app appears (css) and all the html is correct. but the questions for each category do not show up and the button doesnt generate a password
-
-// must make a variable to store the person using the website's answers
-// must make the questions that pop up 
-// MINI PROJECT EX var index = Math.floor(Math.random() * options.length);
-// var computerChoice = options[index];
 
 
 
