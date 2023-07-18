@@ -7,30 +7,31 @@ lowerCase: "abcdefghijklmnopqrstuvwxyz",
 numbers : "0123456789",
 specialCharacters: "!@#$%^&*()?",
 }
+// Add event listener to generate button, not working
+generateBtn.addEventListener("click", writePassword);
 
 //says illegal return on console 
-var userAnswer = prompt("How many characters would like in your password?")
+var userAnswer = prompt("How many characters would like in your password?");
 if (!userAnswer) {
-  return
+  console.log("Try again")
+  return;
 }
 else if (userAnswer < 8) {
   console.log("Password length must be 8 or more characters!")
-  return
+  return;
 }
 else if (userAnswer > 129) {
   console.log("Password length must be less than 129 characters!")
-  return
+  return false;
 }
 
 var upperCase = confirm("Please click OK to include uppercase characters in your password.")
-
-
 
 var lowerCase = confirm("Please click OK to include lowercase characters in your password.")
 var numbers = confirm("Please click OK to include numbers in your password.")
 var specialCharacters = confirm("Please click OK to include Special Characters in your password.")
 
-// Write password to the #password inputNEED TO DECLARE PASSWORDTEXT
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
@@ -52,11 +53,10 @@ function writePassword() {
 for (var i = 0; i < password.length; i++) {
   password += generatePassword.charAt(Math.floor(Math.random() * options.length));
 }
+// so password is generated password
 password = generatePassword[index];
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 // so right now the app appears (css) and all the html is correct. but the questions for each category do not show up and the button doesnt generate a password
 
