@@ -7,24 +7,8 @@ lowerCase: "abcdefghijklmnopqrstuvwxyz",
 numbers : "0123456789",
 specialCharacters: "!@#$%^&*()?",
 }
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword(); 
-  var passwordText = document.querySelector("#password");
-  if (password.upperCase === true) {
-    password = password + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-  }
-  if (password.lowerCase === true) {
-    password = password + "abcdefghijklmnopqrstuvwxyz"; 
-  }
-  if (password.numbers === true) {
-    password = password + "0123456789"; 
-  }
-  if (password.specialCharacters === true) {
-    password = password + "!@#$%^&*()?"; 
-  }
-//If the user presses cancel at the beginning, it will end function
-//If statement for password length
+
+//says illegal return on console 
 var userAnswer = prompt("How many characters would like in your password?")
 if (!userAnswer) {
   return
@@ -38,8 +22,6 @@ else if (userAnswer > 129) {
   return
 }
 
-
-//OK button on pop-up
 var upperCase = confirm("Please click OK to include uppercase characters in your password.")
 
 
@@ -48,14 +30,31 @@ var lowerCase = confirm("Please click OK to include lowercase characters in your
 var numbers = confirm("Please click OK to include numbers in your password.")
 var specialCharacters = confirm("Please click OK to include Special Characters in your password.")
 
-
-  passwordText.value = password;
-
- 
+// Write password to the #password inputNEED TO DECLARE PASSWORDTEXT
+function writePassword() {
+  var password = generatePassword(); 
+  var passwordText = document.querySelector("#password");
+  if (password.upperCase === true) {
+    password = password += upperCase; 
+  }
+  if (password.lowerCase === true) {
+    password = password += lowerCase; 
+  }
+  if (password.numbers === true) {
+    password = password += numbers; 
+  }
+  if (password.specialCharacters === true) {
+    password = password += specialCharacters; 
+  }
+  
+  
+  //this is what makes the password generate, some reason array is incorrect
+for (var i = 0; i < password.length; i++) {
+  password += generatePassword.charAt(Math.floor(Math.random() * const.length));
 }
-//for (var = i = 0; i <= characterLength; i++) +{
-  //var rando
-//}
+password = generatePassword
+
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
