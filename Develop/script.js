@@ -38,21 +38,21 @@ function writePassword() {
     password = password += upperCase; 
   }
   if (password.lowerCase === true) {
-    password = password += lowerCase; 
+    password = passwordText += lowerCase; 
   }
   if (password.numbers === true) {
-    password = password += numbers; 
+    password = passwordText += numbers; 
   }
   if (password.specialCharacters === true) {
-    password = password += specialCharacters; 
+    password = passwordText += specialCharacters; 
   }
   
   
   //this is what makes the password generate, some reason array is incorrect
 for (var i = 0; i < password.length; i++) {
-  password += generatePassword.charAt(Math.floor(Math.random() * const.length));
+  password += generatePassword.charAt(Math.floor(Math.random() * options.length));
 }
-password = generatePassword
+password = generatePassword[index];
 
 
 // Add event listener to generate button
