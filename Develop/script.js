@@ -1,35 +1,39 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//list of options this is the array
-const characters = {
+//I need to add the user input variables
+var userAnswer;
+var confirmUpperCase;
+var confirmLowerCase;
+var confirmNumbers;
+var confirmSpecialCharacters;
+
+//array for options
+var characters = {
 upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 lowerCase: "abcdefghijklmnopqrstuvwxyz",
 numbers : "0123456789",
 specialCharacters: "!@#$%^&*()?",
-}
+};
 // Add event listener to generate button, not working
 generateBtn.addEventListener("click", writePassword);
 
 //says illegal return on console 
-var userAnswer = prompt("How many characters would like in your password?");
+var userAnswer = (prompt("How many characters would like in your password?"));
 if (!userAnswer) {
-  console.log("Try again")
-  return;
+  console.log("Try again");
 }
 else if (userAnswer < 8) {
-  console.log("Password length must be 8 or more characters!")
-  return;
+console.log("Password length must be 8 or more characters!");
 }
 else if (userAnswer > 129) {
-  console.log("Password length must be less than 129 characters!")
-  return false;
+console.log("Password length must be less than 129 characters!");
 }
-
-var upperCase = confirm("Please click OK to include uppercase characters in your password.")
-
-var lowerCase = confirm("Please click OK to include lowercase characters in your password.")
-var numbers = confirm("Please click OK to include numbers in your password.")
-var specialCharacters = confirm("Please click OK to include Special Characters in your password.")
+else {
+  confirmUpperCase = confirm("Please click OK to include uppercase characters in your password.")
+ confirmLowerCase = confirm("Please click OK to include lowercase characters in your password.")
+confirmNumbers = confirm("Please click OK to include numbers in your password.")
+confirmSpecialCharacters = confirm("Please click OK to include Special Characters in your password.")
+};
 
 // Write password to the #password input
 function writePassword() {
@@ -51,8 +55,8 @@ function writePassword() {
   
   //this is what makes the password generate, some reason array is incorrect
 for (var i = 0; i < password.length; i++) {
-  password += generatePassword.charAt(Math.floor(Math.random() * options.length));
-}
+  password += generatePassword.charAt(Math.floor(Math.random() * characters.length));
+};
 // so password is generated password
 password = generatePassword[index];
 
