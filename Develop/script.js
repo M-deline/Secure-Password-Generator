@@ -1,7 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//list of options
-// next part needs arrays for each section and each section is a variable?
+//list of options this is the array
 const characters = {
 upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 lowerCase: "abcdefghijklmnopqrstuvwxyz",
@@ -26,7 +25,7 @@ else if (userAnswer > 129) {
   console.log("Password length must be less than 129 characters!")
   return
 }
-
+//now for the true if the user does want the things included 
 //OK button on pop-up
 var upperCase = confirm("Please click OK to include uppercase characters in your password.")
 //trying to make it where if the user does/doesn't hit ok or cancel it still continues
@@ -48,7 +47,7 @@ var specialCharacters = confirm("Please click OK to include Special Characters i
 
  
 }
-//for (var = i = 0; i <= passwordLength; i++) +{
+//for (var = i = 0; i <= character.length; i++) +{
   //var rando
 //}
 // Add event listener to generate button
