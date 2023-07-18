@@ -20,21 +20,25 @@ generateBtn.addEventListener("click", writePassword);
 //says illegal return on console 
 var userAnswer = (prompt("How many characters would like in your password?"));
 if (!userAnswer) {
-  console.log("Try again");
+  display("Try again");
 }
 else if (userAnswer < 8) {
-console.log("Password length must be 8 or more characters!");
+display("Password length must be 8 or more characters!");
 }
 else if (userAnswer > 129) {
-console.log("Password length must be less than 129 characters!");
+display("Password length must be less than 129 characters!");
 }
 else {
   confirmUpperCase = confirm("Please click OK to include uppercase characters in your password.")
- confirmLowerCase = confirm("Please click OK to include lowercase characters in your password.")
-confirmNumbers = confirm("Please click OK to include numbers in your password.")
-confirmSpecialCharacters = confirm("Please click OK to include Special Characters in your password.")
-};
-
+  confirmLowerCase = confirm("Please click OK to include lowercase characters in your password.")
+  confirmNumbers = confirm("Please click OK to include numbers in your password.")
+  confirmSpecialCharacters = confirm("Please click OK to include Special Characters in your password.")
+}
+//but what if the user says no to everything?
+if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSpecialCharacters) {
+  display("you must pick some criterias")
+}
+//if (confirm)
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword(); 
