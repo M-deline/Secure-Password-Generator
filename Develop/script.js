@@ -1,6 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 //I need to add the user input variables
+
+var password = document.getElementById("password");
+
+
 var userAnswer;
 var confirmUpperCase;
 var confirmLowerCase;
@@ -21,7 +25,6 @@ generateBtn.addEventListener("click", writePassword);
 // ALERT NEED TO CREDIT https://www.w3schools.com/jsref/met_win_alert.asp
 
 
-// console.log(input)
 var userAnswer = prompt("How many characters would like in your password?");
 if (!userAnswer) {
   alert("Try again");
@@ -44,9 +47,11 @@ if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSpecial
 }
 if (confirm)
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword(); 
-  var passwordText = document.querySelector("#password");
+
+  
+  function writePassword() {
+    var password = generatePassword(); 
+    var passwordText = document.querySelector("#password");
   if (password.upperCase === true) {
     password = password += upperCase; 
   }
@@ -60,12 +65,18 @@ function writePassword() {
     password = passwordText += specialCharacters; 
   }
 }
-  
-  //this is what makes the password generate, some reason array is incorrect
-for (var i = 0; i < password.length; i++) {
-  password += generatePassword.charAt(Math.floor(Math.random() * characters.length));
-};
-function
+
+//used this to help me with above: https://dev.to/code_mystery/random-password-generator-using-javascript-6a
+
+// so we do characters.length bcause thats the name of the array that holds the symbols/numbers/letters
+
+for (var i =0; i <= passwordLength; i++) {
+  var randomNumber = Math.floor(Math.random() * characters.length);
+  password = characters.substring(randomNumber, randomNumber +1);
+}
+  document.getElementById("password).value") = password
+
+
 
 
 
