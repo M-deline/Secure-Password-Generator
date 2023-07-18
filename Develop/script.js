@@ -17,10 +17,12 @@ specialCharacters: "!@#$%^&*()?",
 
 generateBtn.addEventListener("click", writePassword);
 
-//says illegal return on console
-
+// so im using userAnswer as the variable instead of what the website uses userInput
 // ALERT NEED TO CREDIT https://www.w3schools.com/jsref/met_win_alert.asp
-var userAnswer = (prompt("How many characters would like in your password?"));
+
+
+// console.log(input)
+var userAnswer = prompt("How many characters would like in your password?");
 if (!userAnswer) {
   alert("Try again");
 }
@@ -63,6 +65,7 @@ function writePassword() {
 for (var i = 0; i < password.length; i++) {
   password += generatePassword.charAt(Math.floor(Math.random() * characters.length));
 };
+function
 
 
 
