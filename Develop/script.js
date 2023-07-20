@@ -14,22 +14,21 @@ var userAnswer;
   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
 
-let characters = [];
-// let password = "";
+var password = [upperCase, lowerCase, numbers, specialCharacters];
+
+// (password.join());
+
+// (password.join(''));
+
+// (password.join('-'));
 
 var userAnswer;
-// var confirmUpperCase;
-// var confirmLowerCase;
-// var confirmNumbers;
-// var confirmSpecialCharacters;
 
 generateBtn.addEventListener("click", function (){
   ps = generatePassword();
   document.getElementById("password").placeholder = ps;
 });
 //placeholder in html 
-
-// ALERT NEED TO CREDIT https://www.w3schools.com/jsref/met_win_alert.asp
 
 function generatePassword() {
 var userAnswer = prompt("How many characters would like in your password?");
@@ -48,54 +47,12 @@ else {
  var upperCase = confirm("Please click OK to include uppercase characters in your password.");
  var numbers = confirm("Please click OK to include numbers in your password.");
  var specialCharacters = confirm("Please click OK to include special characters in your password.");
-  // confirmUpperCase = confirm("Please click OK to include uppercase characters in your password.");
-  // confirmLowerCase = confirm("Please click OK to include lowercase characters in your password.");
-  // confirmNumbers = confirm("Please click OK to include numbers in your password.");
-  // confirmSpecialCharacters = confirm("Please click OK to include Special Characters in your password.");
-// };
-// if (upperCase !== confirm) (lowerCase !== confirm) (specialCharacters !== confirm) (numbers !== confirm); {
-//   alert("you must pick some criterias")
+
 }
 if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(specialCharacters)) {
   alert("you must pick some criterias");
 }
-//but what if the user says no to everything?
-// //trying to fix options for the 4 different categories 
-// if (upperCase === confirm) {characters += upperCase;}
-// else {(upperCase !== confirm); {characters -= upperCase}};
-// if (lowerCase === confirm) {characters += lowerCase;}
-// else {(lowerCase !== confirm); {characters -= lowerCase}};
-// if (numbers === confirm) {characters += numbers;}
-// else {(numbers !== confirm)} {characters -= numbers;}
-// if (specialCharacters === confirm) {characters += specialCharacters;}
-// else {(specialCharacters !== confirm)} {characters -= specialCharacters};
-
-// if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSpecialCharacters) {
-//   alert("you must pick some criterias")
-// }
-// }
 }
-// //this is if they choose lowercase and uppercase
-// else if (confirmLowerCase && confirmUpperCase && !confirmNumbers && !confirmNumbers)
-// {characters = characters.concat(lowerCase, upperCase);}
-// //if they choose uppercase & numbers 
-// else if (confirmUpperCase && confirmNumbers && !confirmLowerCase && !confirmSpecialCharacters)
-// {characters = characters.concat(upperCase, numbers);}
-// //if they choose confirm uppercase and symbols
-// else if (confirmUpperCase && confirmSpecialCharacters && !confirmLowerCase && !confirmNumbers)
-// {characters = characters.concat(upperCase, specialCharacters);}
-// // if they choose lowercase and numbers
-// else if (confirmLowerCase && confirmNumbers && !confirmSpecialCharacters && !confirmUpperCase)
-// {characters = characters.concat(lowerCase, numbers);}
-// // if they choose lowercase and symbols
-// else if (confirmLowerCase && confirmSpecialCharacters && !confirmNumbers && !confirmUpperCase)
-// {characters = characters.concat(lowerCase, specialCharacters);}
-// //if they choose everything 
-// else if (confirmLowerCase && confirmLowerCase && confirmSpecialCharacters && confirmNumbers)
-// {characters = characters.concat(confirmUpperCase, confirmLowerCase, confirmNumbers, confirmSpecialCharacters);}
-// }
-// Write password to the #password input
-
   function writePassword() {
     // var password = generatePassword(); 
     var passwordText = document.querySelector("#password");
@@ -108,49 +65,13 @@ if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(
     else {(password.numbers !== confirm)} {passwordText -= numbers;}
     if (password.specialCharacters === confirm) {passwordText += specialCharacters;}
     else {(password.specialCharacters !== confirm)} {passwordText -= specialCharacters};
-  }
-//   if (password.upperCase === true) {
-//     password = password += upperCase; 
-//   }
-//   if (password.lowerCase === true) {
-//     password = passwordText += lowerCase; 
-//   }
-//   if (password.numbers === true) {
-//     password = passwordText += numbers; 
-//   }
-//   if (password.specialCharacters === true) {
-//     password = passwordText += specialCharacters; 
-//   }
-//   var password = password.join("");
-//   userAnswer(ps); 
-//   return ps;
-// }
 
 for (let i = 0; i < userAnswer; ++i) {
   let random = Math.floor(Math.random() * Math.floor(passwordText.length));
   password += passwordText[random];
 }
+  }
 
-
-// // return password;
-//    var password = [];
-//  for (var i =0; i <= userAnswer; i++) {
-//    var chooseCharacter = choices [Math.floor(Math.random() * characters.length)];
-//    password.push(chooseCharacter, chooseCharacter +1);
-//  }
-// return password;
-
-// function writePassword (){
-//   return Math.floor(Math.random() * characters.length);
-// }
-
-
-//used this to help me with above: https://dev.to/code_mystery/random-password-generator-using-javascript-6a
-
-//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
-
-// function document.getElementById("password).value") = password;("password");
 
 
 
