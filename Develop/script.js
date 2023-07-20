@@ -47,7 +47,7 @@ else {
  var lowerCase = confirm("Please click OK to include lowercase characters in your password.");
  var upperCase = confirm("Please click OK to include uppercase characters in your password.");
  var numbers = confirm("Please click OK to include numbers in your password.");
- var specialCharacters = confirm("Please click OK to include spacial characters in your password.");
+ var specialCharacters = confirm("Please click OK to include special characters in your password.");
   // confirmUpperCase = confirm("Please click OK to include uppercase characters in your password.");
   // confirmLowerCase = confirm("Please click OK to include lowercase characters in your password.");
   // confirmNumbers = confirm("Please click OK to include numbers in your password.");
@@ -56,19 +56,19 @@ else {
 // if (upperCase !== confirm) (lowerCase !== confirm) (specialCharacters !== confirm) (numbers !== confirm); {
 //   alert("you must pick some criterias")
 }
-if (!confirm(upperCase) && !confirm(LowerCase) && !confirm(Numbers) && !confirm(SpecialCharacters)) {
+if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(specialCharacters)) {
   alert("you must pick some criterias");
 }
 //but what if the user says no to everything?
-//trying to fix options for the 4 different categories 
-if (upperCase === confirm) {characters += upperCase;}
-else {(upperCase !== confirm); {characters -= upperCase}};
-if (lowerCase === confirm) {characters += lowerCase;}
-else {(lowerCase !== confirm); {characters -= lowerCase}};
-if (numbers === confirm) {characters += numbers;}
-else {(numbers !== confirm)} {characters -= numbers;}
-if (specialCharacters === confirm) {characters += specialCharacters;}
-else {(specialCharacters !== confirm)} {characters -= specialCharacters};
+// //trying to fix options for the 4 different categories 
+// if (upperCase === confirm) {characters += upperCase;}
+// else {(upperCase !== confirm); {characters -= upperCase}};
+// if (lowerCase === confirm) {characters += lowerCase;}
+// else {(lowerCase !== confirm); {characters -= lowerCase}};
+// if (numbers === confirm) {characters += numbers;}
+// else {(numbers !== confirm)} {characters -= numbers;}
+// if (specialCharacters === confirm) {characters += specialCharacters;}
+// else {(specialCharacters !== confirm)} {characters -= specialCharacters};
 
 // if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSpecialCharacters) {
 //   alert("you must pick some criterias")
@@ -99,26 +99,36 @@ else {(specialCharacters !== confirm)} {characters -= specialCharacters};
   function writePassword() {
     // var password = generatePassword(); 
     var passwordText = document.querySelector("#password");
-  if (password.upperCase === true) {
-    password = password += upperCase; 
+
+    if (password.upperCase === confirm) {passwordText += upperCase;}
+    else {(password.upperCase !== confirm); {passwordText -= upperCase}};
+    if (password.lowerCase === confirm) {passwordText += lowerCase;}
+    else {(password.lowerCase !== confirm); {passwordText -= lowerCase}};
+    if (password.numbers === confirm) {passwordText += numbers;}
+    else {(password.numbers !== confirm)} {passwordText -= numbers;}
+    if (password.specialCharacters === confirm) {passwordText += specialCharacters;}
+    else {(password.specialCharacters !== confirm)} {passwordText -= specialCharacters};
   }
-  if (password.lowerCase === true) {
-    password = passwordText += lowerCase; 
-  }
-  if (password.numbers === true) {
-    password = passwordText += numbers; 
-  }
-  if (password.specialCharacters === true) {
-    password = passwordText += specialCharacters; 
-  }
-  var password = password.join("");
-  userAnswer(ps); 
-  return ps;
-}
+//   if (password.upperCase === true) {
+//     password = password += upperCase; 
+//   }
+//   if (password.lowerCase === true) {
+//     password = passwordText += lowerCase; 
+//   }
+//   if (password.numbers === true) {
+//     password = passwordText += numbers; 
+//   }
+//   if (password.specialCharacters === true) {
+//     password = passwordText += specialCharacters; 
+//   }
+//   var password = password.join("");
+//   userAnswer(ps); 
+//   return ps;
+// }
 
 for (let i = 0; i < userAnswer; ++i) {
-  let random = Math.floor(Math.random() * Math.floor(characters.length));
-  password += characters[random];
+  let random = Math.floor(Math.random() * Math.floor(passwordText.length));
+  password += passwordText[random];
 }
 
 
