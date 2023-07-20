@@ -2,27 +2,43 @@
 var generateBtn = document.querySelector("#generate");
 //I need to add the user input variables
 
-var password = document.getElementById("password");
+// var password = document.getElementById
 
+//array for options
 
+  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
+  
+// var array2 = characters.concat;
 var userAnswer;
 var confirmUpperCase;
 var confirmLowerCase;
 var confirmNumbers;
 var confirmSpecialCharacters;
 
-//array for options
-var characters = {
-upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-lowerCase: "abcdefghijklmnopqrstuvwxyz",
-numbers : "0123456789",
-specialCharacters: "!@#$%^&*()?",
-};
+generateBtn.addEventListener("click", function writePassword(){
+  ps = generatePassword();
+  document.getElementById("Password").placeholder = ps;
+});
 
-generateBtn.addEventListener("click", writePassword);
-
-// so im using userAnswer as the variable instead of what the website uses userInput
 // ALERT NEED TO CREDIT https://www.w3schools.com/jsref/met_win_alert.asp
+function writePassword() {
+  var password = generatePassword(); 
+  var passwordText = document.querySelector("#password");
+if (password.upperCase === true) {
+  password = password += upperCase; 
+}
+if (password.lowerCase === true) {
+  password = passwordText += lowerCase; 
+}
+if (password.numbers === true) {
+  password = passwordText += numbers; 
+}
+if (password.specialCharacters === true) {
+  password = passwordText += specialCharacters; 
+}
 
 
 var userAnswer = prompt("How many characters would like in your password?");
@@ -48,34 +64,25 @@ if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSpecial
 if (confirm)
 // Write password to the #password input
 
-  
-  function writePassword() {
-    var password = generatePassword(); 
-    var passwordText = document.querySelector("#password");
-  if (password.upperCase === true) {
-    password = password += upperCase; 
-  }
-  if (password.lowerCase === true) {
-    password = passwordText += lowerCase; 
-  }
-  if (password.numbers === true) {
-    password = passwordText += numbers; 
-  }
-  if (password.specialCharacters === true) {
-    password = passwordText += specialCharacters; 
-  }
+
+  var password = [];
+for (var i =0; i <= password.length; i++) {
+  var randomNumber = Math.floor(Math.random() * characters.length);
+  password = characters.array(randomNumber, randomNumber +1);
+}
+var password = password.join("");
+userAnswer(ps); 
+return ps;
 }
 
 //used this to help me with above: https://dev.to/code_mystery/random-password-generator-using-javascript-6a
 
 // so we do characters.length bcause thats the name of the array that holds the symbols/numbers/letters
 
-for (var i =0; i <= passwordLength; i++) {
-  var randomNumber = Math.floor(Math.random() * characters.length);
-  password = characters.substring(randomNumber, randomNumber +1);
-}
-  document.getElementById("password).value") = password
+//this is incorrect
 
+
+// function document.getElementById("password).value") = password;("password");
 
 
 
