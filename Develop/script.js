@@ -8,23 +8,24 @@ var userAnswer;
   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
 
-var password = [upperCase, lowerCase, numbers, specialCharacters];
+var userPassword = [""];
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
   
-  passwordText.value = password;
-}
+//   passwordText.value = password;
+// }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
 var userAnswer;
 
 generateBtn.addEventListener("click", function (){
-  ps = generatePassword();
-  document.getElementById("password").placeholder = ps;
+  password = generatePassword();
+  document.getElementById("password").placeholder = password;
 });
 //placeholder in html 
 
@@ -62,11 +63,23 @@ else {(password.specialCharacters !== confirm)} {passwordText -= specialCharacte
 if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(specialCharacters)) {
   alert("you must pick some criterias");
 }
+
+  generateBtn.addEventListener("click", writePassword);{
+   generatePassword();}
+
+   function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    
+    passwordText.value = password;
+
+}
 for (let i = 0; i < userAnswer; ++i) {
   let random = Math.floor(Math.random() * Math.floor(passwordText.length));
-  password += passwordText[random];
+  userPassword += passwordText[random];
   }
-}
+  }
+  
 
 
 
