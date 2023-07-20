@@ -1,19 +1,20 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 //array for options
 var userAnswer;
-const characters = {
-  upperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-  lowerCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-  numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-  specialCharacters: ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"],
-};
-  // var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  // var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  // var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  // var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
-  // var characters;
-// characters = characters.concat;
+// characters {
+  // upperCase: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+  // lowerCase: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+  // numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  // specialCharacters: ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"],
+//}
+  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
+
+var characters
 
 var userAnswer;
 var confirmUpperCase;
@@ -21,7 +22,7 @@ var confirmLowerCase;
 var confirmNumbers;
 var confirmSpecialCharacters;
 
-generateBtn.addEventListener("click", function writePassword(){
+generateBtn.addEventListener("click", function (){
   ps = generatePassword();
   document.getElementById("Password").placeholder = ps;
 });
@@ -44,29 +45,30 @@ else {
   confirmLowerCase = confirm("Please click OK to include lowercase characters in your password.")
   confirmNumbers = confirm("Please click OK to include numbers in your password.")
   confirmSpecialCharacters = confirm("Please click OK to include Special Characters in your password.")
-}
+};
 //but what if the user says no to everything?
 if (!confirmUpperCase && !confirmLowerCase && !confirmNumbers && !confirmSpecialCharacters) {
   alert("you must pick some criterias")
 }
 //this is if they choose lowercase and uppercase
 else if (confirmLowerCase && confirmUpperCase && !confirmNumbers && !confirmNumbers)
-characters = characters.concat(lowerCase, upperCase);
+{characters = characters.concat(lowerCase, upperCase);}
 //if they choose uppercase & numbers 
 else if (confirmUpperCase && confirmNumbers && !confirmLowerCase && !confirmSpecialCharacters)
-characters = characters.concat(upperCase, numbers);
+{characters = characters.concat(upperCase, numbers);}
 //if they choose confirm uppercase and symbols
 else if (confirmUpperCase && confirmSpecialCharacters && !confirmLowerCase && !confirmNumbers)
-characters = characters.concat(upperCase, specialCharacters);
+{characters = characters.concat(upperCase, specialCharacters);}
 // if they choose lowercase and numbers
 else if (confirmLowerCase && confirmNumbers && !confirmSpecialCharacters && !confirmUpperCase)
-characters = characters.concat(lowerCase, numbers);
+{characters = characters.concat(lowerCase, numbers);}
 // if they choose lowercase and symbols
 else if (confirmLowerCase && confirmSpecialCharacters && !confirmNumbers && !confirmUpperCase)
-characters = characters.concat(lowerCase, specialCharacters);
+{characters = characters.concat(lowerCase, specialCharacters);}
 //if they choose everything 
 else if (confirmLowerCase && confirmLowerCase && confirmSpecialCharacters && confirmNumbers)
-characters = characters.concat(upperCase, lowerCase, numbers, specialCharacters);
+{characters = characters.concat(confirmUpperCase, confirmLowerCase, confirmNumbers, confirmSpecialCharacters);}
+
 // Write password to the #password input
 
   function writePassword() {
@@ -86,9 +88,9 @@ characters = characters.concat(upperCase, lowerCase, numbers, specialCharacters)
   }
 
   var password = [];
-for (var i =0; i <= password.length; i++) {
-  var randomNumber = Math.floor(Math.random() * characters.length);
-  password = characters.array(randomNumber, randomNumber +1);
+for (var i =0; i <= userAnswer; i++) {
+  var chooseCharacter = choices [Math.floor(Math.random() * characters.length)];
+  password.push(chooseCharacter, chooseCharacter +1);
 }
 var password = password.join("");
 userAnswer(ps); 
