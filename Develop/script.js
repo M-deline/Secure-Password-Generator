@@ -1,33 +1,23 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 //array for options
-var userAnswer;
   var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "?"];
 
-var userPassword = [""];
-
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-  
-//   passwordText.value = password;
-// }
+var password = "";
 
 
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-var userAnswer;
+  passwordText.value = password;
+}
 
-generateBtn.addEventListener("click", function (){
-  password = generatePassword();
-  document.getElementById("password").placeholder = password;
-});
-//placeholder in html 
+generateBtn.addEventListener("click", writePassword);
+
 
 function generatePassword() {
 
@@ -49,16 +39,18 @@ else {
  var specialCharacters = confirm("Please click OK to include special characters in your password.");
 
 }
-
-if (password.upperCase === confirm) {passwordText += upperCase;}
-else {(password.upperCase !== confirm); {passwordText -= upperCase}};
-if (password.lowerCase === confirm) {passwordText += lowerCase;}
-else {(password.lowerCase !== confirm); {passwordText -= lowerCase}};
-if (password.numbers === confirm) {passwordText += numbers;}
-else {(password.numbers !== confirm)} {passwordText -= numbers;}
-if (password.specialCharacters === confirm) {passwordText += specialCharacters;}
-else {(password.specialCharacters !== confirm)} {passwordText -= specialCharacters};
-
+if (upperCase === confirm) {
+  password + upperCase[Math.floor(Math.random() * upperCase.length)];
+}
+if (lowerCase === confirm) {
+  password + lowerCase[Math.floor(Math.random() * lowerCase.length)];
+}
+if (numbers === confirm) {
+  password + numbers[Math.floor(Math.random() * numbers/length)];
+}
+if (specialCharacters === confirm) {
+  password + specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+}
 
 if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(specialCharacters)) {
   alert("you must pick some criterias");
@@ -68,35 +60,16 @@ if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(
    generatePassword();}
 
    function writePassword() {
-    var password = generatePassword();
+   password = generatePassword();
     var passwordText = document.querySelector("#password");
     
     passwordText.value = password;
-
-}
-for (let i = 0; i < userAnswer; ++i) {
-  let random = Math.floor(Math.random() * Math.floor(passwordText.length));
-  userPassword += passwordText[random];
+    return password
+   }
   }
-  }
-  
-
-
-
-
-
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password yes
-// THEN I am presented with a series of prompts for password criteria yes
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password yes
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters yes
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters yes
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected !!
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+// }
+// for (var i = 0; i < userAnswer; ++i) {
+//   var random = Math.floor(Math.random() * Math.floor(passwordText.length));
+//   password += passwordText[random];
+//   console.log(password);
+//   }
