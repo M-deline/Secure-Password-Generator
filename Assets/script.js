@@ -39,17 +39,15 @@ function generatePassword() {
     return
   }
 //so now they need to input what they want
-var confirmUpperCase = window.confirm("Please click OK to include uppercase characters in your password.")
-var confirmLowerCase = window.confirm("Please click OK to include lowercase characters in your password.")
-var confirmNumbers = window.confirm("Please click OK to include uppercase characters in your password.")
-var confirmSpecialCharacters = window.confirm("Please click OK to include uppercase characters in your password.")
+var confirmUpperCase = window.confirm("Please click OK to include uppercase characters in your password.");
+var confirmLowerCase = window.confirm("Please click OK to include lowercase characters in your password.");
+var confirmNumbers = window.confirm("Please click OK to include numbers in your password.");
+var confirmSpecialCharacters = window.confirm("Please click OK to include special characters in your password.");
 
-if (confirmUpperCase === false && confirmLowerCase && confirmNumbers && confirmSpecialCharacters) {
+if (confirmUpperCase === false && confirmLowerCase === false && confirmNumbers === false && confirmSpecialCharacters === false) {
   alert("Please select a valid criteria");
 }
 // //confirm all 4 
-//   if (!confirm(upperCase) && !confirm(lowerCase) && !confirm(numbers) && !confirm(specialCharacters)) {
-//     alert("you must pick some criterias");}
 
 else if (confirmUpperCase) {
   all = all.concat(upperCase);
@@ -65,16 +63,16 @@ else if (confirmSpecialCharacters) {
 }
 // so here we're attaching the confirm to the previous variables so that when they click ok it actually takes and stores the input
 if (confirmUpperCase === true) {
-  password += upperCase[Math.floor(Math.random() * upperCase.length)]
+  password += upperCase[Math.floor(Math.random() * upperCase.length)];
 }
 if (confirmLowerCase === true) {
-  password += lowerCase[Math.floor(Math.random() * lowerCase.length)]
+  password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
 }
 if (confirmNumbers === true) {
-  password += numbers[Math.floor(Math.random() * numbers.length)]
+  password += numbers[Math.floor(Math.random() * numbers.length)];
 }
 if (confirmSpecialCharacters === true) {
-  password += specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+  password += specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
 }
 return password
 }
