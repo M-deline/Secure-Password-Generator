@@ -79,7 +79,6 @@ if (confirmSpecialCharacters === true) {
 return password
 }
 
-
 function writePassword() {
   password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -87,6 +86,4 @@ function writePassword() {
   passwordText.value = password;
 }
 
-generateBtn.addEventListener("click", writePassword); {
-  generatePassword();
-}
+generateBtn.addEventListener("click", writePassword);
