@@ -1,7 +1,7 @@
 var generateBtn = document.querySelector("#generate");
 
 console.log(Math.random());
-//array for options
+
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -12,9 +12,9 @@ var passwordLengthMax = 129;
 var password = "";
 
 
+function generatePassword() {
 
-  // var userAnswer = prompt("How many characters would like in your password?");
-  // if (!userAnswer) {
+
   var userLength = prompt("How many characters would you like to include in the password? Must be 8-128 characters.")
   if (userLength > passwordLengthMax) {
     alert("Alert! Password must be between 8-129 characters!")
@@ -29,7 +29,7 @@ var confirmUpperCase = window.confirm("Please click OK to include uppercase char
 var confirmLowerCase = window.confirm("Please click OK to include lowercase characters in your password.");
 var confirmNumbers = window.confirm("Please click OK to include numbers in your password.");
 var confirmSpecialCharacters = window.confirm("Please click OK to include special characters in your password.");
-// so if none are chosen they hae to try again
+
 if (confirmUpperCase === false && confirmLowerCase === false && confirmNumbers === false && confirmSpecialCharacters === false) {
   alert("Please select a valid criteria");
 }
@@ -62,7 +62,7 @@ if (confirmSpecialCharacters === true) {
 }
 return password
 }
-//call the function
+
 function writePassword() {
   password = generatePassword();
   var passwordText = document.querySelector("#password");
