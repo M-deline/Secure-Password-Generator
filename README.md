@@ -6,6 +6,12 @@
 - This challenge uses the basics of JavaScript including if statements, arrays, variables, and functions.
 - This challenge was difficult because I was using the Math.floor and math.random completely wrong and it took it me a long time to finally see that I had to use it for every single category for the prompts and add the array to that randomly generated string. One thing I hope to improve in the fututre is my pseudo code at the beginning to help map out the steps easier and not hesistate to use outside sources. 
 ## Screenshot of website 
+<img width="831" alt="Screenshot 2023-07-21 at 9 10 52 PM" src="https://github.com/M-deline/Secure-Password-Generator/assets/134882025/d9f28cf0-e844-4d91-b435-ba479f9a8b78">
+
+<img width="462" alt="Screenshot 2023-07-21 at 8 50 13 PM" src="https://github.com/M-deline/Secure-Password-Generator/assets/134882025/22edc526-7422-4c1b-a485-d1447484b41d">
+
+## Link to deployed site 
+https://m-deline.github.io/Secure-Password-Generator/
 
 ## Contributions
 - Developer, Foolish. “Random Password Generator Using Javascript.” DEV Community, 2 June 2022, dev.to/code_mystery/random-password-generator-using-javascript-6a. 
