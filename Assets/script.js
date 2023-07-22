@@ -1,10 +1,6 @@
 var generateBtn = document.querySelector("#generate");
 
 console.log(Math.random());
-// var confirmLowerCase;
-// var confirmUpperCase;
-// var confirmNumbers;
-// var confirmSpecialCharacters;
 //array for options
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -15,17 +11,7 @@ var passwordLengthMin = 7;
 var passwordLengthMax = 129;
 var password = "";
 
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
 
-//   passwordText.value = password;
-// }
-
-// generateBtn.addEventListener("click", writePassword);
-
-
-function generatePassword() {
 
   // var userAnswer = prompt("How many characters would like in your password?");
   // if (!userAnswer) {
@@ -43,7 +29,7 @@ var confirmUpperCase = window.confirm("Please click OK to include uppercase char
 var confirmLowerCase = window.confirm("Please click OK to include lowercase characters in your password.");
 var confirmNumbers = window.confirm("Please click OK to include numbers in your password.");
 var confirmSpecialCharacters = window.confirm("Please click OK to include special characters in your password.");
-
+// so if none are chosen they hae to try again
 if (confirmUpperCase === false && confirmLowerCase === false && confirmNumbers === false && confirmSpecialCharacters === false) {
   alert("Please select a valid criteria");
 }
@@ -76,7 +62,7 @@ if (confirmSpecialCharacters === true) {
 }
 return password
 }
-
+//call the function
 function writePassword() {
   password = generatePassword();
   var passwordText = document.querySelector("#password");
