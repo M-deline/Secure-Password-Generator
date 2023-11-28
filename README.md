@@ -13,11 +13,12 @@
 ## Link to deployed site 
 [Click here to view website](https://m-deline.github.io/Secure-Password-Generator/)
 ## Contributions
-- Developer, Foolish. “Random Password Generator Using Javascript.” DEV Community, 2 June 2022, dev.to/code_mystery/random-password-generator-using-javascript-6a. 
-- MozDevNet. “Math.Random() - Javascript: MDN.” JavaScript | MDN, 28 Mar. 2023, developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random. 
-- “Window Alert().” Window Alert() Method, www.w3schools.com/jsref/met_win_alert.asp. Accessed 19 July 2023. 
-- “Window Confirm().” Window Confirm() Method, www.w3schools.com/jsref/met_win_confirm.asp. Accessed 21 July 2023. 
 - Credit to AskBCS Learning Assistant for help 7-20-2023 from dilberovicm36
 - Credit to George Yoo for help during Study Group Session on Friday , July 14th, 2023.
 - Credit to Instructor Dan Kaltenbaugh University of Denver Bootcamp for help in "confirm section" and "math.random" section.
 - Credit to previous modules from University of Denver BootCamp
+- Developer, Foolish. “Random Password Generator Using Javascript.” DEV Community, 2 June 2022, dev.to/code_mystery/random-password-generator-using-javascript-6a. 
+- MozDevNet. “Math.Random() - Javascript: MDN.” JavaScript | MDN, 28 Mar. 2023, developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random.
+- “Password Special Characters.” Password Special Characters | OWASP Foundation, owasp.org/www-community/password-special-characters. Accessed 27 Nov. 2023. 
+- “Window Alert().” Window Alert() Method, www.w3schools.com/jsref/met_win_alert.asp. Accessed 19 July 2023. 
+- “Window Confirm().” Window Confirm() Method, www.w3schools.com/jsref/met_win_confirm.asp. Accessed 21 July 2023. 
