@@ -1,4 +1,3 @@
-
 var input;
 var userNumber;
 var userCharacter;
@@ -20,11 +19,11 @@ array2 = array.map(toUpper);
 var get = document.querySelector("#generate");
 
 get.addEventListener("click", function () {
-    writePassword = generatePassword();
+    writePassword = createPassword();
     document.getElementById("password").placeholder = writePassword;
 });
-function generatePassword() {
-    input = parseInt(prompt("How many characters would you like your password? Choose between 8 and 128"));
+function createPassword() {
+    input = parseInt(prompt("Please pick the length of your password. Choose between 8 and 128"));
   
     if (!input) {
         alert("error, you must input a number");
@@ -108,5 +107,5 @@ function generatePassword() {
 
 function UserInput(writePassword) {
     document.getElementById("password").textContent = writePassword;
-
+console.log("generated password");
 }
